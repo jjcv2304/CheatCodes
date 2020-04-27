@@ -55,7 +55,7 @@ namespace Api
           //options.Authority = "http://localhost:5000";
           //options.Authority = "https://localhost:5002";
           //options.Authority = "https://sts";
-          options.Authority = Environment.GetEnvironmentVariable("IDENTITY_SERVER_AUTHORITY");
+          options.Authority = "http://localhost:5002";
           options.ApiName = "mainApp-api";
           options.RequireHttpsMetadata = false;
         });
@@ -127,8 +127,8 @@ namespace Api
       app.UseSwagger();
       app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });
 
-      app.UseHsts();
-      app.UseHttpsRedirection();
+      //app.UseHsts();
+      //app.UseHttpsRedirection();
       app.UseAuthentication();
       app.UseMvc();
     }

@@ -22,7 +22,7 @@ services:
       context: .
       dockerfile: ./STS/IdSNet/sts.dockerfile
     ports:
-     - "5002:5002"
+     - "5002:80"
     networks:
       - cheatcodes-network
 
