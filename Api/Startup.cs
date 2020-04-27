@@ -53,7 +53,9 @@ namespace Api
         .AddIdentityServerAuthentication(options =>
         {
           //options.Authority = "http://localhost:5000";
-          options.Authority = "https://localhost:5002";
+          //options.Authority = "https://localhost:5002";
+          //options.Authority = "https://sts";
+          options.Authority = Environment.GetEnvironmentVariable("IDENTITY_SERVER_AUTHORITY");
           options.ApiName = "mainApp-api";
           options.RequireHttpsMetadata = false;
         });
