@@ -1,0 +1,13 @@
+﻿bin/
+obj/
+bin
+obj
+*/bin
+*/obj
+*/*/bin
+*/*/obj
+node_modules/
+node_modules
+*/node_modules
+*/*/node_modules
+Dockerfile
