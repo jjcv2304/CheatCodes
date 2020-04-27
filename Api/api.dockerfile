@@ -10,8 +10,6 @@ WORKDIR /app
 COPY --from=build-env /publish .
 COPY --from=build-env /app/Api/appsettings.json .
 
-ENV IDENTITY_SERVER_AUTHORITY=http://localhost:5002
-
 ENTRYPOINT ["dotnet", "Api.dll"]
 
 # From Solution folder

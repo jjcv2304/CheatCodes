@@ -6,8 +6,8 @@ services:
     container_name: 'cheatcodes-angular'
     image: 'cheatcodes-angular'
     build:
-      context: ./CheatCodes.UI/
-      dockerfile: nginx.prod.dockerfile
+      context: .
+      dockerfile: CheatCodes.UI/nginx.prod.dockerfile
     ports:
      - "4200:80"
     depends_on:

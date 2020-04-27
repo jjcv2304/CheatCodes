@@ -1,7 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/core/sdk:3.1.201-alpine3.11 AS build-env
 WORKDIR /app
 
-ENV ASPNETCORE_URLS=http://localhost:5002
 EXPOSE 5002
 
 COPY . ./

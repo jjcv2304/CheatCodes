@@ -32,7 +32,7 @@ namespace IdSNet
       services.AddControllersWithViews();
       services.AddMvc();
 
-      //services.AddHttpsRedirection(httpsOpts => { httpsOpts.HttpsPort = 5002; });
+      services.AddHttpsRedirection(httpsOpts => { httpsOpts.HttpsPort = 5002; });
 
       // configures IIS out-of-proc settings (see https://github.com/aspnet/AspNetCore/issues/14882)
       services.Configure<IISOptions>(iis =>
@@ -64,7 +64,8 @@ namespace IdSNet
 
       var builder = services.AddIdentityServer(options =>
         {
-          options.IssuerUri = "http://localhost:5002";
+          //options.IssuerUri = "http://localhost:5002";
+          //options.PublicOrigin = "https://localhost:5002";
           options.Events.RaiseErrorEvents = true;
           options.Events.RaiseInformationEvents = true;
           options.Events.RaiseFailureEvents = true;
@@ -101,7 +102,7 @@ namespace IdSNet
       app.UseStaticFiles();
 
       app.UseRouting();
-     // app.UseHsts();
+      app.UseHsts();
       //app.UseHttpsRedirection();
       app.UseIdentityServer();
       app.UseAuthorization();
