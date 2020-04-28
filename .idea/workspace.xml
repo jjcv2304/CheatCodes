@@ -50,6 +50,21 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="CheatCodesDatabase [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="CheatCodesDatabase [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="CheatCodesDatabase [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -93,17 +108,17 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@56a34323" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@46b10f34" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@53b21c2a" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@52931718" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@464e0fd2" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1df9e972" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -112,7 +127,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:AspIdUsers [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@50dbf0ec" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@32f7129a" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -121,7 +136,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:CheatCodesDatabase" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@cdc00de" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@64977f84" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -130,7 +145,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:CheatCodesDatabase [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@527dd94e" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@cd92b10" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -194,10 +209,11 @@
       <screen x="-1920" y="0" width="1466" height="864" />
     </state>
     <state x="-1470" y="75" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1584754745865" />
-    <state x="430" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1588033063506">
-      <screen x="0" y="0" width="1466" height="864" />
+    <state x="2277" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1588096622994">
+      <screen x="1920" y="0" width="1218" height="720" />
     </state>
     <state x="-1490" y="258" key="com.intellij.ide.util.TipDialog/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1586272680200" />
+    <state x="2277" y="215" key="com.intellij.ide.util.TipDialog/1920.0.1218.720/0.0.1462.864@1920.0.1218.720" timestamp="1588096622994" />
     <state x="430" y="258" key="com.intellij.ide.util.TipDialog/1920.0.1221.720/0.0.1466.864@0.0.1466.864" timestamp="1588033063506" />
     <state x="-1469" y="258" key="com.intellij.ide.util.TipDialog/62.0.1218.720/-1920.0.1536.864@-1920.0.1536.864" timestamp="1585926896123" />
     <state x="420" y="215" key="com.intellij.ide.util.TipDialog/62.0.1218.720/-1920.0.1536.864@62.0.1218.720" timestamp="1585668368305" />

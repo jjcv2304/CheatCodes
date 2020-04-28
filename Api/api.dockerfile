@@ -9,6 +9,7 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:2.1.17-alpine
 WORKDIR /app
 COPY --from=build-env /publish .
 COPY --from=build-env /app/Api/appsettings.json .
+COPY --from=build-env /app/Persistance/Utils/CheatCodesDatabase.db .
 
 ENTRYPOINT ["dotnet", "Api.dll"]
 
