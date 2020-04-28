@@ -1,7 +1,7 @@
 ﻿FROM mcr.microsoft.com/dotnet/core/sdk:3.1.201-alpine3.11 AS build-env
 WORKDIR /app
 
-EXPOSE 5002
+
 
 COPY . ./
 RUN dotnet restore STS/IdSNet/IdSNet.csproj
@@ -12,6 +12,7 @@ WORKDIR /app
 COPY --from=build-env /publish .
 #COPY --from=build-env /app/STS/IdSNet/appsettings.json .
 
+EXPOSE 5002
 ENTRYPOINT ["dotnet", "IdSNet.dll"]
 
 # From Solution folder

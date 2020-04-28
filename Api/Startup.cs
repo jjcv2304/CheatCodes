@@ -52,8 +52,8 @@ namespace Api
       services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
         .AddIdentityServerAuthentication(options =>
         {
-         // options.Authority = "http://localhost:5002";
-          options.Authority = "http://cheatcodes-sts:5002";
+          options.Authority = "http://sts:80";
+          //options.Authority = "http://cheatcodes-sts:5002";
           options.ApiName = "mainApp-api";
           options.RequireHttpsMetadata = false;
         });
@@ -117,6 +117,18 @@ namespace Api
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
       app.UseCors("ApiCorsPolicy");
+
+      app.Use(async (httpcontext, next) =>
+      {
+        await next();
+        if (httpcontext.Response.StatusCode == StatusCodes.Status302Found)
+        {
+          string location = httpcontext.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Location];
+          httpcontext.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Location] =
+            location.Replace("://identity/", "://identity.mydomain.com/");
+        }
+
+      });
 
       app.UseSecurityHeaders();
       app.UseStaticFiles();
