@@ -14,7 +14,7 @@ services:
      - "sts"
      - "api"
     networks:
-      - cheatcodes-network
+     - cheatcodes-network
 
   api:
     container_name: 'cheatcodes-api'

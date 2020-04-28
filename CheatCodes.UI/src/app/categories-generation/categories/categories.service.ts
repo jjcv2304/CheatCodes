@@ -50,7 +50,8 @@ export class CategoriesService {
   /////////////////// Http Region ///////////////////
 
 
-  private readonly categoryUrl = 'https://localhost:44326/api/categories';
+  // private readonly categoryUrl = 'https://localhost:44326/api/categories';
+  private readonly categoryUrl = 'http://localhost:44326/api/categories';
   private readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

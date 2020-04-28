@@ -30,4 +30,10 @@
       <None Remove="Utils\CheatCodesDatabase - Copy.db" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Utils\CheatCodesDatabase.db">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

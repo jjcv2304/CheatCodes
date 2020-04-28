@@ -64,7 +64,7 @@ namespace IdSNet
 
       var builder = services.AddIdentityServer(options =>
         {
-          //options.IssuerUri = "http://localhost:5002";
+          options.IssuerUri = "http://localhost:5002";
           //options.PublicOrigin = "https://localhost:5002";
           options.Events.RaiseErrorEvents = true;
           options.Events.RaiseInformationEvents = true;

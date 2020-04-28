@@ -52,10 +52,8 @@ namespace Api
       services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
         .AddIdentityServerAuthentication(options =>
         {
-          //options.Authority = "http://localhost:5000";
-          //options.Authority = "https://localhost:5002";
-          //options.Authority = "https://sts";
-          options.Authority = "http://localhost:5002";
+         // options.Authority = "http://localhost:5002";
+          options.Authority = "http://cheatcodes-sts:5002";
           options.ApiName = "mainApp-api";
           options.RequireHttpsMetadata = false;
         });
