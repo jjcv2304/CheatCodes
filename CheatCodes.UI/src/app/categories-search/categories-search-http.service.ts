@@ -23,7 +23,7 @@ export class CategoriesSearchHttpService {
     return this.cardsSearchResult;
   }
 
-  private readonly categorySearchUrl = 'https://localhost:44327/api/CategoriesSearch';
+  private readonly categorySearchUrl = 'https://localhost:57246/api/CategoriesSearch';
 
   constructor(private http: HttpClient) {
   }

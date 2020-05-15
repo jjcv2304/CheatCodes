@@ -46,7 +46,7 @@ namespace CheatCodes.Search
         {
           builder.AllowAnyHeader()
             .AllowAnyMethod()
-            .SetIsOriginAllowed(origin => origin == "http://localhost:4200")
+            .SetIsOriginAllowed(origin => origin == "http://localhost:3214")
             .AllowCredentials();
         });
       });
@@ -66,59 +66,13 @@ namespace CheatCodes.Search
        // options.UseLoggerFactory(MyLoggerFactory)
           .UseSqlite(connectionString));
 
-      //services.AddAuthentication("Bearer")
-      //  .AddJwtBearer("Bearer", options =>
-      //  {
-      //    options.Authority = "http://localhost:5000";
-      //    options.Audience = "mainApp-api";
-      //    options.RequireHttpsMetadata = false;
-      //  });
-      services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-        .AddIdentityServerAuthentication(options =>
-        {
-          options.Authority = "https://localhost:5002";
-          options.ApiName = "mainApp-api";
-          options.RequireHttpsMetadata = false;
-        });
-      
-      //services.AddAuthorization(options =>
-      //  options.AddPolicy("RequireAuth", policy => policy.RequireAuthenticatedUser()));
-      services.AddAuthorization(options =>
-      {
-        options.FallbackPolicy = new AuthorizationPolicyBuilder()
-          .RequireAuthenticatedUser()
-          .Build();
-      });
 
       services.AddControllers().AddNewtonsoftJson(options =>
         options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
       
       services.AddControllers();
 
-      services.AddSwaggerGen(c =>
-      {
-        c.SwaggerDoc("v1", new OpenApiInfo
-        {
-          Version = "v1",
-          Title = "CheatCodes Search API",
-          Description = "Api for the search screen",
-          TermsOfService = new Uri("https://example.com/terms"),
-          Contact = new OpenApiContact
-          {
-            Name = "Juan",
-            Email = "jj@fakemail.com"
-          },
-          License = new OpenApiLicense
-          {
-            Name = "Use under ...",
-            Url = new Uri("https://example.com/license")
-          }
-        });
-        // Set the comments path for the Swagger JSON and UI.
-        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-        c.IncludeXmlComments(xmlPath);
-      });
+    
       services.Configure<MyConfig>(Configuration.GetSection("MyConfig"));
     }
 
@@ -134,14 +88,9 @@ namespace CheatCodes.Search
 
       app.UseHsts();
       app.UseHttpsRedirection();
-      app.UseAuthentication();
       
       app.UseRouting();
-
-      app.UseSwagger();
-      app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });
       
-      app.UseAuthorization();
       app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
     }
     private void UpdateApiErrorResponse(HttpContext context, Exception ex, ApiError error)

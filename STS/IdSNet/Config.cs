@@ -38,11 +38,11 @@ namespace IdSNet
             RequirePkce = true,
             RequireClientSecret = false,
 
-            RedirectUris = {"http://localhost:4200/signin-callback", 
-              "http://localhost:4200/assets/silent-callback.html"},
+            RedirectUris = {"http://localhost:3214/signin-callback", 
+              "http://localhost:3214/assets/silent-callback.html"},
 
-            PostLogoutRedirectUris = {"http://localhost:4200/signout-callback" },
-            AllowedCorsOrigins = { "http://localhost:4200" },
+            PostLogoutRedirectUris = {"http://localhost:3214/signout-callback" },
+            AllowedCorsOrigins = { "http://localhost:3214" },
 
             AllowedScopes = { "openid", "profile", "mainApp-api" },
             AccessTokenLifetime = 600
