@@ -26,45 +26,47 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
+import {CategoriesBreadCrumbsModule} from './categories-bread-crumbs/categories-bread-crumbs.module';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CategoriesListComponent,
-    MainMenuComponent,
-    CategoryCardComponent,
-    CategoryEditComponent,
-    FieldEditComponent,
-    CardMoveMenuComponent,
-    CategoriesContainerComponent,
-    SignoutRedirectCallbackComponent,
-    SigninRedirectCallbackComponent,
-    UnauthorizedComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FlipModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatProgressSpinnerModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({
-      name: 'Dev tools ngrx for CheatCodes',
-      maxAge: 25,
-      logOnly: environment.production
-    })
-  ],
-  providers: [
-    CategoriesService,
-    AuthService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CategoriesListComponent,
+        MainMenuComponent,
+        CategoryCardComponent,
+        CategoryEditComponent,
+        FieldEditComponent,
+        CardMoveMenuComponent,
+        CategoriesContainerComponent,
+        SignoutRedirectCallbackComponent,
+        SigninRedirectCallbackComponent,
+        UnauthorizedComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FlipModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatProgressSpinnerModule,
+        StoreModule.forRoot({}),
+        EffectsModule.forRoot([]),
+        StoreDevtoolsModule.instrument({
+            name: 'Dev tools ngrx for CheatCodes',
+            maxAge: 25,
+            logOnly: environment.production
+        }),
+      CategoriesBreadCrumbsModule
+    ],
+    providers: [
+        CategoriesService,
+        AuthService,
+        {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

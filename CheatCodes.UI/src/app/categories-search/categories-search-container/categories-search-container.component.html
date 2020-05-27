@@ -1,11 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === false">
+               [opened]="(isHandset$ | async) === false"
+               class="sidenav"
+               fixedInViewport>
     <mat-toolbar>Search Filters</mat-toolbar>
 
-    <app-categories-search-filters></app-categories-search-filters>
+    <app-categories-search-filters (valueChange)='showDetailView=false;'></app-categories-search-filters>
 
   </mat-sidenav>
   <mat-sidenav-content>
@@ -26,16 +28,18 @@
       </mat-nav-list>
     </mat-toolbar>
 
-<!--    <app-categories-search-list-result *ngIf="cardsSearchResult$ | async as cardsSearchResult$"-->
-<!--                                       [cards]="cardsSearchResult$">-->
-<!--    </app-categories-search-list-result>-->
-<!--    -->
-    <app-categories-search-list-result *ngIf="!showDetailView" [cards]="cardsSearchResult">
+    <button (click)="SetSideNavShow(true)" mat-mini-fab color="accent" *ngIf="showButtonShowSideNav">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+
+    <app-categories-search-list-result *ngIf="!showDetailView" [cards]="cardsSearchResult" (showCardDetailsClicked)="onShowCardDetailsClicked()">
     </app-categories-search-list-result>
 
-    <app-categories-search-tree-detail-result *ngIf="!!showDetailView"
-                                              [cardDetail]="cardDetails">
+<!--    <app-categories-search-tree-detail-result *ngIf="!!showDetailView" [cardDetail$]="(categoriesSearchService.newCardDetailsResult | async)">-->
+<!--    </app-categories-search-tree-detail-result>-->
 
+    <app-categories-search-tree-detail-result *ngIf="!!showDetailView" [cardDetail]="cardDetails">
     </app-categories-search-tree-detail-result>
 
   </mat-sidenav-content>

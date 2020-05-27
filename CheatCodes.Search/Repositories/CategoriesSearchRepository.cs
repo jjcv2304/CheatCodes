@@ -68,7 +68,8 @@ namespace CheatCodes.Search.Repositories
         .Select(c => new CategoryBasicVM
         {
           Id = c.Id,
-          Name = c.Name
+          Name = c.Name,
+          ParentId = c.ParentId
         })
         .OrderBy(c => c.Id);
 

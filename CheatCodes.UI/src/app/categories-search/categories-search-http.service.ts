@@ -4,6 +4,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {CategoryBasic, CategoryTree, ICategoryBasic, ICategoryTree} from './model/category';
 import {BehaviorSubject} from 'rxjs';
 import {CategorySearchFilters} from './model/categorySearchFilters';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class CategoriesSearchHttpService {
@@ -23,7 +24,7 @@ export class CategoriesSearchHttpService {
     return this.cardsSearchResult;
   }
 
-  private readonly categorySearchUrl = 'https://localhost:57246/api/CategoriesSearch';
+  private readonly categorySearchUrl = environment.categorySearchUrl;
 
   constructor(private http: HttpClient) {
   }

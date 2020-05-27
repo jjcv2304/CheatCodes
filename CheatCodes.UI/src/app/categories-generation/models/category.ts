@@ -13,6 +13,16 @@ export interface ICategory {
   categoryFieldValues: ICategoryFieldValue [];
 }
 
+export class CategoryBreadCrumb {
+  constructor(init?: Partial<CategoryBreadCrumb>) {
+    Object.assign(this, init);
+  }
+
+  id: number;
+  name: string;
+  child: CategoryBreadCrumb;
+}
+
 export class Category implements ICategory {
   public constructor(init?: Partial<Category>) {
     Object.assign(this, init);
@@ -83,8 +93,53 @@ export class CategoryBuilder implements ICategory {
     this.description = description;
     return this;
   }
+
   setParentId(parentId: number) {
     this.parentId = parentId;
     return this;
   }
 }
+
+export class CategoryBreadCrumbBuilder extends CategoryBreadCrumb {
+  id: number = null;
+  name: string = null;
+  child: CategoryBreadCrumb;
+
+  static basic() {
+    const categoryBreadCrumbBuilder = new CategoryBreadCrumbBuilder();
+    categoryBreadCrumbBuilder.id = GetRandom.Number();
+    categoryBreadCrumbBuilder.name = GetRandom.String();
+    return categoryBreadCrumbBuilder;
+  }
+
+  constructor() {
+    super();
+  }
+
+  build() {
+    return new CategoryBreadCrumb(this);
+  }
+
+  simple() {
+    this.id = GetRandom.Number();
+    this.name = GetRandom.String();
+    return this;
+  }
+
+  setId(id: number) {
+    this.id = id;
+    return this;
+  }
+
+  setName(name: string) {
+    this.name = name;
+    return this;
+  }
+
+  setChild(categoryBreadCrumb: CategoryBreadCrumb) {
+    this.child = categoryBreadCrumb;
+    return this;
+  }
+}
+
+

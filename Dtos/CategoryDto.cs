@@ -64,4 +64,11 @@ namespace Dtos
     public string Description { get; set; }
     public int? ParentId { get; set; }
   }
+
+  public class CategoryBreadCrumbsDto
+  {
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public CategoryBreadCrumbsDto child { get; set; }
+  }
 }

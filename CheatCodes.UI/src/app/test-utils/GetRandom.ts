@@ -17,6 +17,9 @@ export class GetRandom {
     // }
     // return s;
     // CS
+    if (len === undefined) {
+      len = 10;
+    }
     let s = '';
     while (len--) {
       s += String.fromCodePoint(Math.floor(Math.random() * (126 - 33) + 33));

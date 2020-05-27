@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {CategoriesSearchHttpService} from '../categories-search-http.service';
@@ -22,6 +22,7 @@ export class CategoriesSearchFiltersComponent implements OnInit, OnDestroy {
   categoryNameFilterOr: boolean;
   categoryNameFilterAnd: boolean;
   private componentActive = true;
+  @Output() valueChange: EventEmitter<void> = new EventEmitter();
 
   constructor(private breakpointObserver: BreakpointObserver,
               private apiService: CategoriesSearchHttpService,
@@ -67,6 +68,7 @@ export class CategoriesSearchFiltersComponent implements OnInit, OnDestroy {
       filters.categoryNameFilterOr = this.categoryNameFilterOr;
       filters.categoryName2Filter = this.searchCategoriesForm.get('categoryName2Filter').value;
     }
+    this.valueChange.emit();
     this.store.dispatch(new searchActions.CategoriesFilter(filters));
   }
 

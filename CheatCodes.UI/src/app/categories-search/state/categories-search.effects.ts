@@ -21,7 +21,8 @@ export class CategoriesSearchEffects {
     ofType(searchActions.CategoriesSearchActionTypes.CategoriesFilter),
     switchMap((action: CategoriesFilter) =>
       this.categoriesSearchHttpService.GetCategoriesByFiltersAsync(action.payload).pipe(
-        map((data: Envelope<Array<ICategoryBasic>>) => (new searchActions.CategoriesFilterSuccess(data.result))),
+        map((data: Envelope<Array<ICategoryBasic>>) => (new searchActions.CategoriesFilterSuccess(data.result))
+        ),
         catchError(err => of(new searchActions.CategoriesFilterFail(err)))
       ))
   );

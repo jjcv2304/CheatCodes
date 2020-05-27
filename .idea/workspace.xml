@@ -19,40 +19,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="AspIdUsers" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="AspIdUsers [2]" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="AspIdUsers [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="AspIdUsers [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>autoGrowTextZone</find>
@@ -68,7 +34,6 @@
   <component name="ProjectId" id="1ZPUsVIrZlI8pM8I3v6CjdbLytO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -77,67 +42,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="ts.external.directory.path" value="C:\GIT\CheatCodes\CheatCodes.UI\node_modules\typescript\lib" />
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@773cc66d" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@2353eea1" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:AspIdUsers" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@49b74ebd" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:AspIdUsers [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:AspIdUsers [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@31906331" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:CheatCodesDatabase" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:CheatCodesDatabase" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@77a506e0" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:CheatCodesDatabase [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:CheatCodesDatabase [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@4a005b61" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -170,26 +76,34 @@
       <screen x="62" y="0" width="1218" height="720" />
     </state>
     <state x="264" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1218.720/-1920.0.1536.864@62.0.1218.720" timestamp="1584985289696" />
-    <state width="801" height="389" key="GridCell.Tab.0.bottom" timestamp="1585668370343">
-      <screen x="62" y="0" width="1218" height="720" />
+    <state width="987" height="240" key="GridCell.Tab.0.bottom" timestamp="1590015992500">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="975" height="224" key="GridCell.Tab.0.bottom/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1584740590191" />
+    <state width="987" height="240" key="GridCell.Tab.0.bottom/0.0.1280.720/-1920.0.1466.864@0.0.1280.720" timestamp="1590015992500" />
     <state width="801" height="389" key="GridCell.Tab.0.bottom/62.0.1218.720/-1920.0.1536.864@62.0.1218.720" timestamp="1585668370343" />
-    <state width="801" height="389" key="GridCell.Tab.0.center" timestamp="1585668370342">
-      <screen x="62" y="0" width="1218" height="720" />
+    <state width="987" height="240" key="GridCell.Tab.0.center" timestamp="1590015992500">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="975" height="224" key="GridCell.Tab.0.center/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1584740590191" />
+    <state width="987" height="240" key="GridCell.Tab.0.center/0.0.1280.720/-1920.0.1466.864@0.0.1280.720" timestamp="1590015992500" />
     <state width="801" height="389" key="GridCell.Tab.0.center/62.0.1218.720/-1920.0.1536.864@62.0.1218.720" timestamp="1585668370342" />
-    <state width="801" height="389" key="GridCell.Tab.0.left" timestamp="1585668370342">
-      <screen x="62" y="0" width="1218" height="720" />
+    <state width="987" height="240" key="GridCell.Tab.0.left" timestamp="1590015992500">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="975" height="224" key="GridCell.Tab.0.left/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1584740590191" />
+    <state width="987" height="240" key="GridCell.Tab.0.left/0.0.1280.720/-1920.0.1466.864@0.0.1280.720" timestamp="1590015992500" />
     <state width="801" height="389" key="GridCell.Tab.0.left/62.0.1218.720/-1920.0.1536.864@62.0.1218.720" timestamp="1585668370342" />
-    <state width="801" height="389" key="GridCell.Tab.0.right" timestamp="1585668370343">
-      <screen x="62" y="0" width="1218" height="720" />
+    <state width="987" height="240" key="GridCell.Tab.0.right" timestamp="1590015992500">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="975" height="224" key="GridCell.Tab.0.right/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1584740590191" />
+    <state width="987" height="240" key="GridCell.Tab.0.right/0.0.1280.720/-1920.0.1466.864@0.0.1280.720" timestamp="1590015992500" />
     <state width="801" height="389" key="GridCell.Tab.0.right/62.0.1218.720/-1920.0.1536.864@62.0.1218.720" timestamp="1585668370343" />
+    <state x="-1678" y="77" key="SettingsEditor" timestamp="1590021767662">
+      <screen x="-1920" y="0" width="1466" height="864" />
+    </state>
+    <state x="-1678" y="77" key="SettingsEditor/0.0.1280.720/-1920.0.1466.864@-1920.0.1466.864" timestamp="1590021767662" />
     <state x="-1470" y="75" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584754745865">
       <screen x="-1920" y="0" width="1466" height="864" />
     </state>

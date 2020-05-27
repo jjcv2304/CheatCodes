@@ -6,6 +6,7 @@ export interface CategoriesSearchState {
   categoryNameFilterAnd: boolean;
   categoryNameFilter: string;
   categoryName2Filter: string;
+  showButtonShowSideNav: boolean;
   filteredCategories: CategoryBasic[];
   error: string;
 }
@@ -15,6 +16,7 @@ const initialState: CategoriesSearchState = {
   categoryNameFilterOr: false,
   categoryNameFilter: '',
   categoryName2Filter: '',
+  showButtonShowSideNav: false,
   filteredCategories: [],
   error: ''
 };
@@ -47,6 +49,12 @@ export function reducer(state = initialState, action: CategoriesSearchActions): 
       return {
         ...state,
         categoryName2Filter: action.payload,
+      };
+
+    case CategoriesSearchActionTypes.ShowButtonShowSideNav:
+      return {
+        ...state,
+        showButtonShowSideNav: action.payload,
       };
 
     case CategoriesSearchActionTypes.CategoriesFilterSuccess:

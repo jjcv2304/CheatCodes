@@ -13,9 +13,9 @@ export class CategoryBasic implements ICategoryBasic {
 
   id: number = null;
   name: string = null;
-  description = "";
+  description = '';
   parentId: number;
-  color = "lightskyblue";
+  color = 'lightskyblue';
 }
 
 export interface ICategoryTree {
@@ -34,8 +34,8 @@ export class CategoryTree implements ICategoryTree {
 
   id: number = null;
   name: string = null;
-  description = "";
+  description = '';
   parentId: number;
-  color = "lightskyblue";
+  color = 'lightskyblue';
   childs: CategoryTree[];
 }

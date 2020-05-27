@@ -41,6 +41,17 @@ namespace Application.Utils
       };
     }
 
+    public static CategoryBreadCrumbsDto Map(CategoryTreeDto category)
+    {
+      if (category == null) return null;
+      return new CategoryBreadCrumbsDto
+      {
+        Id = category.Id,
+        Name = category.Name,
+        child = Map(category.ChildCategoryDtos?.SingleOrDefault()),
+      };
+    }
+
     public static List<CategoryTreeDto> MapToTreeDto(IEnumerable<Category> categories)
     {
       return categories.Select(MapToTreeDto).ToList();

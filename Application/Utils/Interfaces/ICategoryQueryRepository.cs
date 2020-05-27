@@ -19,5 +19,6 @@ namespace Application.Utils.Interfaces
     Category GetById(int id);
 
     IList<CategoryTreeDto> ExportToJson();
+    CategoryTreeDto ParentsCategoryTreeDtos(int rootCategoryId);
   }
 }

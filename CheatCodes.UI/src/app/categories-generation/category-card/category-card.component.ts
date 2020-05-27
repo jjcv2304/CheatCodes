@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Category, ICategory} from '../models/category';
+import {Category, CategoryBreadCrumb, ICategory} from '../models/category';
 import {CategoriesService} from '../categories/categories.service';
 import {Envelope} from '../../utils/envelope';
 import {Router} from '@angular/router';
@@ -144,5 +144,10 @@ export class CategoryCardComponent implements OnInit {
 
   toogleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  showCardBreadCrumbs() {
+    return false;
+
   }
 }

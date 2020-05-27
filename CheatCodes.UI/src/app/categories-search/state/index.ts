@@ -29,3 +29,8 @@ export const getCategoryName2Filter = createSelector(
   getCategoriesSearchFeatureState,
   state => state.categoryName2Filter
 );
+
+export const getShowButtonShowSideNav = createSelector(
+  getCategoriesSearchFeatureState,
+  state => state.showButtonShowSideNav
+);

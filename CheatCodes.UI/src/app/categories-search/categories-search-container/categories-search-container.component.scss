@@ -28,3 +28,40 @@ mat-sidenav-content {
   overflow-y: hidden;
 }
 
+
+/*****/
+@import "~styles/myVariables";
+
+.list-result-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  width: 100%;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-tablet-landscape){
+  .card-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet-landscape) and (max-width: $breakpoint-desktop) {
+  .card-container {
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-desktop-long) {
+  .card-container {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop-long){
+  .card-container {
+    width: 20%;
+  }
+}
+

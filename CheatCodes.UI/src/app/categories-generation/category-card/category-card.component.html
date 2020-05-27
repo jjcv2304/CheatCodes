@@ -1,12 +1,12 @@
-<div class="card-container" [ngStyle]="{'background-color': card.color, 'width': cardWidth, 'height': cardHeight}">
-  <div class="front" [hidden]="flipDiv">
-    <div class="front-container" [ngStyle]="{'width': cardWidth, 'height': cardHeight}">
-      <textarea type="text" class="card-header text-shadow" (input)="setSaveIsRecommended()" [(ngModel)]="card.name">
+<div class="card" [ngStyle]="{'background-color': card.color, 'width': cardWidth, 'height': cardHeight}">
+  <div [hidden]="flipDiv">
+    <div class="card__front" [ngStyle]="{'width': cardWidth, 'height': cardHeight}">
+        <textarea type="text" class="card__header text-shadow" (input)="setSaveIsRecommended()" [(ngModel)]="card.name">
         </textarea>
-      <textarea type="text" class="card-description" (input)="setSaveIsRecommended()" (focusin)="expandCard()"
+      <textarea type="text" class="card__description" (input)="setSaveIsRecommended()" (focusin)="expandCard()"
                 [(ngModel)]="card.description"></textarea>
-      <div class="card-footer">
-        <div class="card-deep-navigation">
+      <div class="card__footer">
+        <div>
           <div (click)="canNavigateUp() ? navigateUp() : $event.stopPropagation(); canNavigateUp() ? null:false"
                class="fas fa-angle-double-up" [ngClass]="{'fa-disabled' : !canNavigateUp()}">
           </div>
@@ -14,26 +14,28 @@
                class="fas fa-angle-double-down" [ngClass]="{'fa-disabled' : !canNavigateDown()}">
           </div>
         </div>
-        <div class="card-menu">
+        <div class="card__menu">
           <div class="fas fa-save" [style.color]="saveIsRecommended ? 'red' : 'black'" (click)="saveCard()"></div>
           <div class="fas fa-plus" (click)="addChildCard()"></div>
-          <div class="fas fa-bars card-menu-container" (mouseenter)="toogleMenu()" (mouseleave)="toogleMenu()">
-            <app-card-move-menu *ngIf="showMenu" (moveUp)="moveCardUp()" (moveToSibling)="moveCardToSibling($event)" [canMoveUp]="canNavigateUp()" [currentCategoryId]="card.id"></app-card-move-menu>
+          <div class="fas fa-bars card__menu__options" (mouseenter)="toogleMenu()" (mouseleave)="toogleMenu()">
+            <app-card-move-menu *ngIf="showMenu" (moveUp)="moveCardUp()" (moveToSibling)="moveCardToSibling($event)"
+                                [canMoveUp]="canNavigateUp()" [currentCategoryId]="card.id">
+            </app-card-move-menu>
           </div>
           <div class="fas fa-trash-alt" (click)="deleteCard(card)"></div>
         </div>
-        <div class="card-side-navigation">
+        <div>
           <div class="fas fa-asterisk" (click)="resizeCard()"></div>
           <div class="fas fa-angle-double-right" (click)="sideNavigationRight()"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="back" [hidden]="!flipDiv">
-    <div class="back-container" [ngStyle]="{'width': cardWidth, 'height': cardHeight}">
-      <div class="card-header text-shadow">{{card.name}}</div>
-      <div class="card-description">
-        <div *ngFor="let field of card.categoryFieldValues" class="card-description-field">
+  <div [hidden]="!flipDiv">
+    <div class="card__back" [ngStyle]="{'width': cardWidth, 'height': cardHeight}">
+      <div class="card__header text-shadow">{{card.name}}</div>
+      <div class="card__description">
+        <div *ngFor="let field of card.categoryFieldValues" class="card__description__field">
           <label>
             {{field.fieldName}}
           </label>
@@ -42,15 +44,15 @@
                     [(ngModel)]="field.value" class="input-field"></textarea>
         </div>
       </div>
-      <div class="card-footer">
-        <div class="card-deep-navigation">
+      <div class="card__footer">
+        <div>
         </div>
-        <div class="card-menu">
+        <div class="card__menu">
           <div class="fas fa-plus" (click)="addField()"></div>
           <div class="fas fa-bars"></div>
           <div class="fas fa-trash-alt" (click)="deleteCard(card)"></div>
         </div>
-        <div class="card-side-navigation">
+        <div>
           <div class="fas fa-asterisk" (click)="resizeCard()"></div>
           <div class="fas fa-angle-double-right" (click)="sideNavigationRight()"></div>
         </div>

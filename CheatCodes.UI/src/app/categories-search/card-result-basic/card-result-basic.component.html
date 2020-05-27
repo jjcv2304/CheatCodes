@@ -1,6 +1,10 @@
 <mat-card>
-  <mat-card-title>{{card.name}}</mat-card-title>
-  <mat-card-content></mat-card-content>
+  <mat-card-title-group>
+    <mat-card-subtitle>
+      <app-categories-bread-crumbs [categoryId]="this.card.parentId || 0" class="breadCrumbs"></app-categories-bread-crumbs>
+    </mat-card-subtitle>
+    <mat-card-title>{{card.name}}</mat-card-title>
+  </mat-card-title-group>
   <mat-card-footer>
     <button mat-button color="primary" (click)="showCardDetails()">Details</button>
   </mat-card-footer>

@@ -48,7 +48,7 @@ namespace Persistance
             ch.ParentCategory = cp;
             return ch;
           },
-          new {CategoryId = id},
+          new { CategoryId = id },
           splitOn: "endOfType"
         ).SingleOrDefault();
 
@@ -151,7 +151,7 @@ namespace Persistance
 
               return c;
             },
-            new {categoryParentId},
+            new { categoryParentId },
             splitOn: "endOfType, endOfType2, endOfType3, endOfType4")
           .GroupBy(c => c.Id)
           .Select(group =>
@@ -209,7 +209,7 @@ namespace Persistance
 
               return c;
             },
-            new {categoryId},
+            new { categoryId },
             splitOn: "endOfType, endOfType2, endOfType3, endOfType4")
           .GroupBy(c => c.Id)
           .Select(group =>
@@ -232,10 +232,69 @@ namespace Persistance
       }
     }
 
+    public CategoryTreeDto ParentsCategoryTreeDtos(int rootCategoryId)
+    {
+      using (var connection = new SQLiteConnection(_connectionString.Value))
+      {
+        var flatResult = connection.Query<CategoryTreeDto>(@$"
+            ;with category_tree as
+            (
+               select id,name, parentId
+               from Category
+               where id = {rootCategoryId}
+               union all
+               select C.id, C.name, C.parentId
+               from Category c
+               join category_tree p on C.id = P.parentId
+                AND C.id<>C.parentId 
+            ) 
+
+            select ct2.id, ct2.name, ct2.ParentId
+              from category_tree ct2
+              union
+              select c.id, c.name, c.ParentId
+              from category_tree ct
+              inner join Category c on ct.ParentId=c.Id"
+        );
+        return BuildTreeSingleRoot(flatResult.ToList());
+      }
+    }
+
     private static List<CategoryTreeDto> BuildTree(List<CategoryTreeDto> items)
     {
       items.ForEach(i => i.ChildCategoryDtos = items.Where(ch => ch.ParentId == i.Id).ToList());
       return items.Where(i => i.ParentId == null).ToList();
     }
+    private static CategoryTreeDto BuildTreeSingleRoot(List<CategoryTreeDto> items)
+    {
+      items.ForEach(i => i.ChildCategoryDtos = items.Where(ch => ch.ParentId == i.Id).ToList());
+      return items.Single(i => i.ParentId == null);
+    }
+
+    /*
+     ;with category_tree as
+       (
+       select id,name, parentid
+       from Category
+       where id = 464 
+       union all
+       select C.id, C.name, C.parentid
+       from Category c
+       join category_tree p on C.id = P.parentid  
+       AND C.id<>C.parentid 
+       ) 
+       
+       select c.id, c.name, c.ParentId
+       from category_tree ct inner join Category c on ct.ParentId=c.Id
+     */
+
+    /*
+     WITH RECURSIVE MyTree AS (
+       SELECT * FROM Category WHERE id =rootId
+       UNION ALL
+       SELECT m.* FROM Category AS m JOIN MyTree AS t ON m.ParentId = t.Id
+       )
+       SELECT * FROM MyTree;
+     */
   }
 }

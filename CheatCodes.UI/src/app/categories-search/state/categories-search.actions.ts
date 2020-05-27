@@ -7,6 +7,7 @@ export enum CategoriesSearchActionTypes {
   CategoryNameFilterOrClicked = '[Search] Or Name filter',
   CategoryNameFilterEnter = '[Search] Name filter',
   CategoryName2FilterEnter = '[Search] Name filter 2',
+  ShowButtonShowSideNav = '[Search] Show button to show side nav panel',
   CategoriesFilter = '[Search] Categories filter',
   CategoriesFilterSuccess = '[Search] Categories filter success',
   CategoriesFilterFail = '[Search] Categories filter fail',
@@ -40,6 +41,13 @@ export class CategoryName2FilterEnter implements Action {
   }
 }
 
+export class ShowButtonShowSideNav implements Action {
+  readonly type = CategoriesSearchActionTypes.ShowButtonShowSideNav;
+
+  constructor(public payload: boolean) {
+  }
+}
+
 export class CategoriesFilter implements Action {
   readonly type = CategoriesSearchActionTypes.CategoriesFilter;
 
@@ -63,6 +71,7 @@ export type CategoriesSearchActions =
   | CategoryNameFilterOrClicked
   | CategoryNameFilterEnter
   | CategoryName2FilterEnter
+  | ShowButtonShowSideNav
   | CategoriesFilter
   | CategoriesFilterSuccess
   | CategoriesFilterFail;

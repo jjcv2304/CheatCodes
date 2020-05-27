@@ -35,6 +35,16 @@ namespace Api.Categories
     }
 
     [HttpGet]
+    [Route("[action]/{rootId}")]
+    public IActionResult GetBreadCrumbs(int rootId)
+    {
+      if (rootId < 1) return BadRequest("The rootId must be greater than 0");
+
+      var result = _messages.Dispatch(new GetCategoryBreadCrumbs(rootId));
+      return Ok(result);
+    }
+
+    [HttpGet]
     [Route("[action]/{parentId}")]
     public IActionResult GetChildsOf(int parentId)
     {

@@ -3,6 +3,7 @@ import {UserManager, User} from 'oidc-client';
 import {Subject} from 'rxjs';
 import {Constants} from './Constants';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
@@ -14,14 +15,14 @@ export class AuthService {
 
   constructor(private _httpClient: HttpClient) {
     const stsSettings = {
-      authority: Constants.stsAuthority,
-      client_id: Constants.clientId,
-      redirect_uri: `${Constants.clientRoot}signin-callback`,
+      authority: environment.stsAuthority,
+      client_id: environment.clientId,
+      redirect_uri: `${environment.clientRoot}signin-callback`,
       scope: 'openid profile mainApp-api',
       response_type: 'code',
-      post_logout_redirect_uri: `${Constants.clientRoot}signout-callback`,
+      post_logout_redirect_uri: `${environment.clientRoot}signout-callback`,
       automaticSilentRenew: true,
-      silent_redirect_uri: `${Constants.clientRoot}assets/silent-callback.html`
+      silent_redirect_uri: `${environment.clientRoot}assets/silent-callback.html`
     };
     this._userManager = new UserManager(stsSettings);
     this._userManager.events.addAccessTokenExpired(_ => {

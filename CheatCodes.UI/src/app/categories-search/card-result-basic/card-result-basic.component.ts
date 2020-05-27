@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CategoryBasic} from '../model/category';
 import {CategoriesSearchHttpService} from '../categories-search-http.service';
 
@@ -8,13 +8,14 @@ import {CategoriesSearchHttpService} from '../categories-search-http.service';
   styleUrls: ['./card-result-basic.component.scss']
 })
 export class CardResultBasicComponent {
-  @Input()
-  card: CategoryBasic;
+  @Input() card: CategoryBasic;
+  @Output() showCardDetailsClicked = new EventEmitter<void>();
 
   constructor(private categoriesSearchHttpService: CategoriesSearchHttpService) {
   }
 
   showCardDetails() {
     this.categoriesSearchHttpService.GetCategoryDetails(this.card.id);
+    this.showCardDetailsClicked.emit();
   }
 }
