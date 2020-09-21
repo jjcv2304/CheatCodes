@@ -7,7 +7,7 @@ namespace Api.Test.Framework
 {
   public static class SeleniumConfig
   {
-    private static string _baseUrl = "http://localhost:4200/";
+    private static string _baseUrl = "http://localhost3214/";
     public static string LoginUrl = "https://localhost:5002/Account/Login";
     public static string CardsUrl = _baseUrl + "categoryList/0";
     public static string SearchUrl = _baseUrl + "categorySearch";

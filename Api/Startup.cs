@@ -66,7 +66,7 @@ namespace Api
         {
           builder.AllowAnyHeader()
             .AllowAnyMethod()
-            .SetIsOriginAllowed(origin => origin == "http://localhost:4200")
+            .SetIsOriginAllowed(origin => origin == "http://localhost:3214")
             .AllowCredentials();
         });
       });
